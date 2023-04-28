@@ -1,9 +1,11 @@
  #include "main.h"
 
  /**
- * print_triangle - prints a triangle
- * @size : integer type
- * Return:void
+ * print_triangle - Prints a triangle made of '#' characters with a given size 'size'.
+ *
+ * @size: The size of the triangle to print.
+ *
+ * Return: void.
  */
 
 void print_triangle(int size)
