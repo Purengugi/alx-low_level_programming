@@ -2,30 +2,29 @@
 
 /**
  * print_square - prints a square
- * @n: number of # to be printed on each line
- *
- * Return: void
+ * @n: number of # to be printed
+ * 
+ * Return:void
  */
+
 void print_square(int n)
 {
-        int i = 0, j;
 
-        if (n <= 0)
-        {
-                _putchar('\n');
-                return;
-        }
+	int i = 0, ii;
 
-        while (i < n)
-        {
-                j = 0;
-                while (j < n)
-                {
-                        _putchar('#');
-                        j++;
-                }
-                _putchar('\n');
-                i++;
-        }
+	 while (i < n && n > 0)
+	{
+	      ii = 0;
+	      while (ii < n)
+	      {
+		     _putchar('#');
+		     ii++;
+	      }
+
+        	_putchar('\n');
+		i++;
+	}
+
+	if (i == 0)
+		_putchar('\n');
 }
-
