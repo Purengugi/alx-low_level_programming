@@ -1,11 +1,9 @@
- #include "main.h"
+#include "main.h"
 
  /**
- * print_triangle - Prints a triangle made of '#' characters with a given size 'size'.
- *
- * @size: The size of the triangle to print.
- *
- * Return: void.
+ * print_triangle - prints a triangle
+ * @size : integer type
+ * Return:void
  */
 
 void print_triangle(int size)
@@ -33,7 +31,6 @@ void print_triangle(int size)
 	}
 	if (i == 1)
 {
-    /* If the loop never executed, print a newline character */
-    _putchar('\n');
+		_putchar('\n');
 }
 }
