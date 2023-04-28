@@ -33,6 +33,7 @@ void print_triangle(int size)
 	}
 	if (i == 1)
 {
-		_putchar('\n');
+    /* If the loop never executed, print a newline character */
+    _putchar('\n');
 }
 }
