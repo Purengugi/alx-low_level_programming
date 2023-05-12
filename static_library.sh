@@ -2,7 +2,7 @@
 
 # AUTHOR: Purengugi
 # DATE:   12/05/2023
-# NAME:   wyrmlin.sh
+# NAME:   static_library.sh
 
 
 ##########################################################################

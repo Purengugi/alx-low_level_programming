@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# NAME:    wyrmlin2.sh
+# NAME:    static_library2.sh
 # AUTHOR:  Purengugi
 # DATE:    12/05/2023
 
