@@ -1,19 +1,20 @@
-
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
 
+#define ERR_MSG "Error"
+
 /**
- * is_digit - checks if a string contains a non-digit char
+ * is_digit - checks if a string is composed of digits
  * @s: string to be evaluated
  *
- * Return: 0 if a non-digit is found, 1 otherwise
+ * Return: 1 if string is composed of digits, 0 if otherwise
  */
 int is_digit(char *s)
 {
 	int i = 0;
 
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] < '0' || s[i] > '9')
 			return (0);
@@ -23,20 +24,20 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - calculates the length of a string
  * @s: string to evaluate
  *
  * Return: the length of the string
  */
 int _strlen(char *s)
 {
-	int i = 0;
+	int len = 0;
 
-	while (s[i] != '\0')
+	while (s[len] != '\0')
 	{
-		i++;
+		len++;
 	}
-	return (i);
+	return (len);
 }
 
 /**
@@ -48,12 +49,12 @@ void errors(void)
 	exit(98);
 }
 
- /**
+/**
  * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
+ * @argc: number of command-line arguments
+ * @argv: An array containing the command-line arguments
  *
- * Return: always 0 (Success)
+ * Return: 0 (Success)
  */
 int main(int argc, char *argv[])
 {
