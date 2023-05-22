@@ -2,55 +2,46 @@
 #include "dog.h"
 
 /**
-* new_dog - a function that creates a new dog
-* @name: a string 'name'
-* @age: a float 'age'
-* @owner: a string 'owner'
-* Return: returns a pointer to a struct
-*/
+ * new_dog - creates a new dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ *
+ * Return: pointer to new dog
+ */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i = 0, c = 0;
-	dog_t *newDog;
+	unsigned int nl, ol, i;
+	dog_t *dog;
 
-	newDog = malloc(sizeof(dog_t));
-	if (newDog == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
-
-	newDog->age = age;
-
-	for (i = 0, c = 0; name[i] != '\0'; i++)
-		c++;
-	newDog->name = malloc(sizeof(char) * (c + 1));
-	if (newDog->name == NULL)
-	{
-		free(newDog);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
 		return (NULL);
-	}
-
-	for (i = 0; 1 ; i++)
+	for (nl = 0; name[nl]; nl++)
+		;
+	nl++;
+	dog->name = malloc(nl * sizeof(char));
+	if (dog->name == NULL)
 	{
-		(*(newDog->name + i)) = name[i];
-		if (name[i] == '\0')
-			break;
-	}
-
-	for (i = 0, c = 0; owner[i] != '\0'; i++)
-		c++;
-	newDog->owner = malloc(sizeof(char) * (c + 1));
-	if (newDog->owner == NULL)
-	{
-		free(newDog);
-		free(newDog->name);
+		free(dog);
 		return (NULL);
 	}
-
-	for (i = 0; 1 ; i++)
+	for (i = 0; i < nl; i++)
+		dog->name[i] = name[i];
+	dog->age = age;
+	for (ol = 0; owner[ol]; ol++)
+		;
+	ol++;
+	dog->owner = malloc(ol * sizeof(char));
+	if (dog->owner == NULL)
 	{
-		(*(newDog->owner + i)) = owner[i];
-		if (owner[i] == '\0')
-			break;
+		free(dog->name);
+		free(dog);
+		return (NULL);
 	}
-
-	return (newDog);
+	for (i = 0; i < ol; i++)
+		dog->owner[i] = owner[i];
+	return (dog);
 }
